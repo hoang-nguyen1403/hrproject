@@ -22,11 +22,16 @@ function turn_off_search() {
     mini_search_bar.style.display = 'inline-block';
 }
 
+function pop_up_login(){
+    
+}
+
+
 var item ='item'
 
 const Menubar = (props) => {
     return (
-        <div className="ui huge fixed top menu">
+        <div className="ui huge fixed top teal inverted menu">
             <div className='item'>
                 <img src={logo}/>
             </div>
@@ -71,7 +76,23 @@ const Menubar = (props) => {
                 </div>
                 <a className='item' href='#' id='mini_search_bar' onClick={turn_on_search}><i
                     className='search icon'></i></a>
-                <a className='item'><i className='user circle outline icon'></i></a>
+                <div className='ui simple dropdown item'>
+                    <i className='user circle outline icon'></i>
+                    <div className=' vertical menu'>
+                        <a href='#' className='item' onClick={pop_up_login}>
+                            <i className="user circle outline icon"></i>
+                            Login
+                        </a>
+                        <a href='#' className='item'>
+                            <i className="question circle outline icon"></i>
+                            Help Center
+                        </a>
+                        <a href='#' className='item'>
+                            <i className="address card circle outline icon"></i>
+                            Contact
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 )

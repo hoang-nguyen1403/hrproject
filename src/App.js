@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './Style/Semantic/semantic.css'
 import Main_hr from './components/main'
 import './components/style.css'
+document.body.style.backgroundColor = '#FFF5EE'
 
 function turn_on_search() {
     var mini_search_bar = document.getElementById("mini_search_bar");
@@ -25,7 +26,7 @@ var item ='item'
 
 const Menubar = (props) => {
     return (
-        <div className="ui huge top menu font_link">
+        <div className="ui huge fixed top menu">
             <div className='item'>
                 <img src={logo}/>
             </div>
@@ -79,6 +80,7 @@ const Menubar = (props) => {
 
 function App() {
     return (
+
         <div className='ui'>
             <Menubar />
             <Main_hr />

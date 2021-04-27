@@ -6,6 +6,7 @@ import Main_hr from './components/main'
 import './components/style.css'
 import Login from'./components/login'
 import {render} from "@testing-library/react";
+import { Button, Icon, Modal } from 'semantic-ui-react'
 document.body.style.backgroundColor = '#FFF5EE'
 
 function turn_on_search() {
@@ -24,14 +25,11 @@ function turn_off_search() {
     mini_search_bar.style.display = 'inline-block';
 }
 
-function pop_up_login(){
-    ReactDOM.render(
-            <Login />,
-        document.getElementById('main_root'))
-}
+
 
 
 const Menubar = (props) => {
+    const [firstOpen, setFirstOpen] = React.useState(false)
     return (
         <div className="ui huge fixed top teal inverted menu">
             <div className='item'>
@@ -81,10 +79,11 @@ const Menubar = (props) => {
                 <div className='ui simple dropdown item'>
                     <i className='user circle outline icon'></i>
                     <div className=' vertical menu'>
-                        <a href='#' className='item' onClick={pop_up_login}>
-                            <i className="user circle outline icon"></i>
-                            Login
-                        </a>
+                        <div href='#' className='item' >
+                            <Login />
+                            {/*<i className="user circle outline icon"></i>*/}
+                            {/*Login*/}
+                        </div>
                         <a href='#' className='item'>
                             <i className="question circle outline icon"></i>
                             Help Center

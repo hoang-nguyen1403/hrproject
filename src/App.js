@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import './Style/Semantic/semantic.css'
 import Main_hr from './components/main'
 import './components/style.css'
+import Login from'./components/login'
+import {render} from "@testing-library/react";
 document.body.style.backgroundColor = '#FFF5EE'
 
 function turn_on_search() {
@@ -23,11 +25,11 @@ function turn_off_search() {
 }
 
 function pop_up_login(){
-    
+    ReactDOM.render(
+            <Login />,
+        document.getElementById('main_root'))
 }
 
-
-var item ='item'
 
 const Menubar = (props) => {
     return (
@@ -36,7 +38,7 @@ const Menubar = (props) => {
                 <img src={logo}/>
             </div>
             <div className='ui simple dropdown item'>
-                Home
+                <a href=''> Home </a>
                 <div className='menu'>
                     <div className='item'>Overview</div>
                     <div className='item'>People and Analytics</div>

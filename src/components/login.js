@@ -5,7 +5,11 @@ import './Semantic/semantic.min.css'
 import './style.css'
 import {Button, Modal} from 'semantic-ui-react'
 import Register from './RegisterForm'
+import Main_login from "./main_login";
 
+function Load_main_login(){
+    ReactDOM.render(<Main_login/>, document.getElementById("root"))
+}
 
 function Register_open(){
     ReactDOM.render(<Register />, document.getElementById("main_root"))
@@ -16,7 +20,6 @@ const Login = (props) =>{
     const [open1, setOpen] = React.useState(false)
     const [secondOpen, setSecondOpen] = React.useState(false)
     return(
-
         <>
             <Modal
                 onClose={() => setOpen(false)}
@@ -47,8 +50,9 @@ const Login = (props) =>{
                                                     <i className="lock icon"></i>
                                                 </div>
                                             </div>
-                                            <div className="ui blue submit button">Login</div>
+
                                         </form>
+                                        <button className="ui big blue submit button" onClick={Load_main_login} >Login</button>
                                     </div>
                                     <div className="middle aligned column">
                                         <button className='ui big button' onClick={() => setSecondOpen(true)} primary>

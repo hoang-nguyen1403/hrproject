@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './Style/Semantic/semantic.css'
 import Main_hr from './components/main'
 import Menubar from "./components/Menubar";
+import CovidMap from "./components/covid19";
 import './components/style.css'
 import Login from'./components/login'
 import {render} from "@testing-library/react";
@@ -16,6 +17,8 @@ function App() {
         <div className='ui'>
             <Menubar />
             <Main_hr />
+            <CovidMap />
+
         </div>
     );
 }
